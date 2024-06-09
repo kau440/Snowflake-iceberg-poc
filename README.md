@@ -12,3 +12,12 @@ Link to follow - https://docs.snowflake.com/en/user-guide/tables-iceberg-create
 6. For performance exteriment - I have cretaed 2 iceberg tables based on the Snowflake sample data (Customer and Customer Address) and finally created another iceberg table joining those 2 tables.
 
 7. Finally compared 2 sets of operations on iceberge tables and normal Snowflake tables.
+
+8. Few Points to high light - 
+    I have used Snowflake as the Catalogue.
+
+    For this experiment I'm using public internet for data transfer between AWS S3 and Snowflake. For expelicit Organization requirement you can use Direct connect or AWS VPN.
+
+    Here only Snowflake is accessing (Reading and Writing) the iceberg table. And it's easier to read the updated iceberg table as Snowflake catalogue automatically maintain the latest version at the time of data read.
+
+![alt text](image.png)
