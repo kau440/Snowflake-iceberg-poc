@@ -21,3 +21,6 @@ Link to follow - https://docs.snowflake.com/en/user-guide/tables-iceberg-create
     Here only Snowflake is accessing (Reading and Writing) the iceberg table. And it's easier to read the updated iceberg table as Snowflake catalogue automatically maintain the latest version at the time of data read.
 
 ![alt text](image.png)
+
+Performance Stats - 
+![alt text](POC - SF Iceberg.png)
