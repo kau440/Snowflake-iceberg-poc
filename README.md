@@ -23,4 +23,4 @@ Link to follow - https://docs.snowflake.com/en/user-guide/tables-iceberg-create
 ![alt text](image.png)
 
 Performance Stats - 
-![alt text](POC - SF Iceberg.png)
+![POC - SF Iceberg.png](image.png)
