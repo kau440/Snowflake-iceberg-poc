@@ -8,8 +8,8 @@ CREATE OR REPLACE EXTERNAL VOLUME iceberg_external_volume
          (
             NAME = 'kb-s3-ap-southeast-2'
             STORAGE_PROVIDER = 'S3'
-            STORAGE_BASE_URL = 's3://kb-snowflake-glacier/'
-            STORAGE_AWS_ROLE_ARN = 'arn:aws:iam::058264547428:role/kb-snowflake-iceberg'
+            STORAGE_BASE_URL = '<bucket-name>'
+            STORAGE_AWS_ROLE_ARN = '<role-arn>'
             STORAGE_AWS_EXTERNAL_ID = 'iceberg_table_external_id'
          )
       );
@@ -19,8 +19,8 @@ CREATE OR REPLACE EXTERNAL VOLUME iceberg_external_volume
       DESC EXTERNAL VOLUME iceberg_external_volume;
 
 /*Note: 
-      IAM User for Snowflake - usr-SF-Iceberg       : arn:aws:iam::058264547428:user/usr-SF-Iceberg
-        IAM Role for Snowflake - kb-snowflake-iceberg  : arn:aws:iam::058264547428:role/kb-snowflake-iceberg
+      IAM User for Snowflake - 
+        IAM Role for Snowflake - 
     Snowflake provisions a single IAM user for your entire Snowflake account. All S3 external volumes in your account use that IAM user.
     
     STORAGE_AWS_EXTERNAL_ID = 'iceberg_table_external_id'
@@ -61,7 +61,7 @@ CREATE OR REPLACE ICEBERG TABLE my_iceberg_table (
   EXTERNAL_VOLUME = 'iceberg_external_volume'
   BASE_LOCATION = 'experiment/extvol'
 AS 
-  select * from SNOWFLAKE_SAMPLE_DATA.TPCDS_SF100TCL.CATALOG_RETURNS limit 100000000;
+  select * from SNOWFLAKE_SAMPLE_DATA.TPCDS_SF100TCL.CATALOG_RETURNS limit 1000;
 
 
 
